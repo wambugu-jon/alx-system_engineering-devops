@@ -6,3 +6,4 @@ Display current directory contents, including hidden files (starting with .). Us
 listfilesdigitonly displays current directory contents in long format, with user and group IDs displayed numerically and hidden files.
 script that creates a directory named my_first_directory in the /tmp/ directory.
 Move the file betty from /tmp/ to /tmp/my_first_directory.
+Delete the file betty.
