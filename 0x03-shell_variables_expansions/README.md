@@ -10,3 +10,5 @@
 9. a script that prints the result of POWER divided by DIVIDE, followed by a new line.
 10. a script that displays the result of BREATH to the power LOVE; BREATH and LOVE are environment variables.
 11. a script that converts a number from base 2 to base 10.
+12. a script that prints all possible combinations of two letters, except oo; Letters are lower cases, from a to z; 
+One combination per line; The output should be alpha ordered, starting with aa; Do not print oo.
