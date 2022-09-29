@@ -1,0 +1,23 @@
+global
+        log /dev/log    local0
+	stats socket /run/haproxy/admin.sock mode 660 level admin
+
+defaults
+        log     global
+        mode    http
+        option  httplog
+	timeout connect  10s
+	timeout client  30s
+	timeout server  30s
+
+frontend leahmbuthia-tech-frontend
+	bind *:80
+	bind *:443 ssl crt /etc/haproxy/certs/leahmbuthia.tech.pem
+	http-request redirect scheme https code 301 unless { ssl_fc }
+	http-request set-header X-Forwarded-Proto https
+	default_backend leahmbuthia-tech-backend
+
+backend leahmbuthia-tech-backend
+	balance roundrobin
+	server 13333-web-01 3.83.35.53:80 check
+	server 13333-web-02 44.200.107.142:80 check
